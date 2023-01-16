@@ -5,6 +5,10 @@
     --card-horizontal-space: 100px;
 }
 
+body{
+    height: 100vh;
+}
+
 .card-container{
     position: relative;
     height: 100%;
@@ -14,22 +18,28 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "a b"
                          "c d";
+    border: 1px solid black;
 }
-
-
-
 
 .card-pos-a{
     grid-area: a;
+    border: 1px solid black;
+    background-color: gray;
 }
 .card-pos-b{
     grid-area: b;
+    border: 1px solid black;
+    background-color: goldenrod;
 }
 .card-pos-c{
     grid-area: c;
+    border: 1px solid black;
+    background-color: rosybrown;
 }
 .card-pos-d{
     grid-area: d;
+    border: 1px solid black;
+    background-color: darkcyan;
 }
 
 
