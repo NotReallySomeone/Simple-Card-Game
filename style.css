@@ -1,23 +1,27 @@
 :root{
-    --card-width:157px;
-    --card-height:220px;
+    --card-width: 157px;
+    --card-height: 220px;
     --num-cards:4;
     --card-horizontal-space: 100px;
 }
-
 body{
     height: 100vh;
 }
-
+main{
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
 .card-container{
     position: relative;
     height: 100%;
-    width:calc(var(--card-width) * (var(--num-cards) / 2 ) + var(--card-horizontal-space));
-    display: grid;
+    width:calc(var(--card-width) * (var(--num-cards) / 2) + var(--card-horizontal-space));
+    display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "a b"
-                         "c d";
+    grid-template-areas: 'a b'
+                         'c d';
     border: 1px solid black;
 }
 
@@ -42,32 +46,28 @@ body{
     background-color: darkcyan;
 }
 
-
-main{
-    height: 55%;
-    display: flex;
+.card-pos-a, .card-pos-b, .card-pos-c, .card-pos-d{
+    display:flex;
     justify-content: center;
-    border: 1px solid black;
+    align-items: center;
 }
-
+     
 
 .card{
-    position: absolute;
+    position:absolute;
     height:var(--card-height);
     width:var(--card-width);
-    perspective: 1000px; 
-    cursor:pointer;     
+    perspective: 1000px;
+    cursor:pointer;
 }
-
 .card-inner{
     position:relative;
     width:100%;
     height:100%;
     text-align: center;
     transition: transform 0.6s;
-    transform-style: preserve-3d; 
+    transform-style: preserve-3d;
 }
-
 .card-front, .card-back{
     position:absolute;
     width:100%;
@@ -75,15 +75,9 @@ main{
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
 .card-img{
     height:100%;
 }
-
 .card-back{
-    transform: rotateY(180deg); 
-}
-
-.card:hover .card-inner{
-    transform: rotateY(180deg);
+    transform:rotateY(180deg);
 }
